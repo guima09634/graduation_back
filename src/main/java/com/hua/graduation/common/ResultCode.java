@@ -1,5 +1,9 @@
 package com.hua.graduation.common;
 
+/**
+ * 规定给种码值
+ * @author Daniel
+ */
 public class ResultCode {
 
     public final static String SUCCESS = "e1000";

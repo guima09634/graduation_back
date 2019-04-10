@@ -3,6 +3,11 @@ package com.hua.graduation.controller;
 import com.hua.graduation.common.ResultBean;
 import com.hua.graduation.common.ResultCode;
 
+/**
+ *基础拦截器，规定各种返回类型
+ * @Date 2019-04-10
+ * @author Daniel
+ */
 public class BaseController {
     /**
      * 返回成功结果

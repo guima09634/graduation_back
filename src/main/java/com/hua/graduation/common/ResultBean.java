@@ -1,5 +1,11 @@
 package com.hua.graduation.common;
 
+/**
+ * json格式
+ * @Date 2019-04-10
+ * @author Daniel
+ * @param <T> 数据类型
+ */
 public class ResultBean<T> {
     protected String code;
 
