@@ -1,15 +1,14 @@
 package com.hua.graduation.provider;
 
-
 import com.hua.graduation.entity.Search.UserSearch;
+import com.hua.graduation.entity.User;
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * 为UserMapper提供sql;
- * @author Daneil
+ * 为UserManageMapper提供sql
+ * @author Daniel
  */
-public class UserProvider {
-
+public class UserManageProvider {
 
     public String query(UserSearch search) {
         StringBuffer sql = new StringBuffer("SELECT t1.*,t2.* FROM t_users_account t1 LEFT JOIN t_users_info t2 ON" +
@@ -21,6 +20,14 @@ public class UserProvider {
         StringBuffer sql = new StringBuffer("SELECT COUNT(1) FROM t_users_account t1 LEFT JOIN t_users_info t2 ON" +
                 "t1.userId = t2.usersId WHERE t1.isDeleted = 0");
         return sql.append(where(search)).toString();
+    }
+
+    public String deleteUser(UserSearch user) {
+        if(("deleted").equals(user.getFreezeOrDeleted())) {
+            return "UPDATE t_users_account SET isDeleted = 1 WHERE userId = " + user.getUserId();
+        } else {
+            return "UPDATE t_users_account SET isFreeze = 1 WHERE userId = " + user.getUserId();
+        }
     }
 
     private String where(UserSearch search) {

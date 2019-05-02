@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Daniel
  */
 @RestController
-@RequestMapping(value = "/api/user")
+@RequestMapping(value = "/api/Login")
 public class UserController extends BaseController{
 
     @Autowired
@@ -39,6 +39,8 @@ public class UserController extends BaseController{
             return returnFailure("用户名或密码错误");
         }
     }
+
+
 
     @RequestMapping(value = "/query")
     public ResultBean query(@RequestBody UserSearch search) {

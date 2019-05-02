@@ -16,6 +16,7 @@ public class UserSearch extends BaseSearch{
     private Integer startAge;
     private Integer endAge;
     private String sex;
+    private String freezeOrDeleted;
 
     public void setUserId(String userId) {
         this.userId = userId;
@@ -95,5 +96,13 @@ public class UserSearch extends BaseSearch{
 
     public String getMode() {
         return mode;
+    }
+
+    public void setFreezeOrDeleted(String freezeOrDeleted) {
+        this.freezeOrDeleted = freezeOrDeleted;
+    }
+
+    public String getFreezeOrDeleted() {
+        return freezeOrDeleted;
     }
 }

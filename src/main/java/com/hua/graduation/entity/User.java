@@ -13,6 +13,7 @@ public class User extends BaseController {
     private Short isVip;
     private Short isDeleted;
     private String netName;
+    private Short isfreeze;
 
     public void setPassword(String password) {
         this.password = password;
@@ -92,5 +93,13 @@ public class User extends BaseController {
 
     public String getUserId() {
         return userId;
+    }
+
+    public void setIsfreeze(Short isfreeze) {
+        this.isfreeze = isfreeze;
+    }
+
+    public Short getIsfreeze() {
+        return isfreeze;
     }
 }
